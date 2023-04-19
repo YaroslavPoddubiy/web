@@ -15,38 +15,56 @@
     <div class="content">
         <!-- header -->
         <div class="header">
-            <a href="landing.html" target="_blank" class="landing-href">
-                <div class="logo">
-                    <img class="pawprint" src="icons/pawprint.svg" alt="">
-                    <div>
-                        <p class="your">Your</p>
-                        <p class="lovely">Lovely</p>
-                        <p class="pets">Pets</p>
-                    </div>
+            <div class="container">
+                <div class="logo-menu">
+                    <img src="icons/menu-hamburger-svgrepo-com.svg" alt="" class="menubtn">
+                    <a href="landing.html" class="landing-href">
+                        <div class="logo">
+                            <img class="pawprint" src="icons/pawprint.svg" alt="">
+                            <div>
+                                <p class="your">Your</p>
+                                <p class="lovely">Lovely</p>
+                                <p class="pets">Pets</p>
+                            </div>
+                        </div>
+                    </a>
                 </div>
-            </a>
-            <!--Categories-->
-            <div class="categories">
-                <span class="dogs">Собаки</span>
-                <span class="cats">Коти</span>
-                <span class="birds">Птахи</span>
-                <span class="rodents">Гризуни</span>
-                <span class="fish">Риби</span>
+                <!--Categories-->
+                <div class="categories">
+                    <a href="container.html" class="dogs">Собаки</a> 
+                    <a href="container.html" class="cats">Коти</a>
+                    <a href="container.html" class="birds">Птахи</a>
+                    <a href="container.html" class="rodents">Гризуни</a>
+                    <a href="container.html" class="fish">Риби</a>
+                </div>
+                
+                <div class="user-cart">
+                    <img src="icons/user.svg" alt="" class="user">
+                    <img src="icons/cart.svg" alt="" class="cart">
+                </div>
             </div>
-            
-            <img src="icons/user.svg" alt="" class="user">
-            <img src="icons/cart.svg" alt="" class="cart">
 
         </div>
 
         <div class="info-main">
-            <div class="navigation">
-                <span class="about">Про товар</span>
-                <span class="characteristics">Характеристики</span>
-                <span class="feedbacks">Відгуки</span>
-            </div>
-            <div class="image">
+            <div class="main-info">
+                <h1>Будиночок котячий</h1>
                 <div>
+                    <span class="star">&starf;</span>
+                    <span class="star">&starf;</span>
+                    <span class="star">&starf;</span>
+                    <span class="star">&starf;</span>
+                    <span class="star">&starf;</span>
+                    <span class="available">Є в наявності</span>
+                </div>
+            </div>
+            <div class="navigation">
+                <p class="about">Про товар</p>
+                <p class="characteristics">Характеристики</p>
+                <p class="feedbacks">Відгуки</p>
+            </div>
+            <div class="images-info">
+                <div class="images">
                     <img src="icons/arrow-left.svg" alt="" class="arrow">
                     <img src="images/info/image1-cut.jpg" alt="" class="big-image">
                     <img src="icons/arrow-right.svg" alt="" class="arrow">
@@ -56,16 +74,19 @@
                         <img src="images/info/image2.jpg" alt="" class="small-image">
                     </div>
                 </div>
-                <div class="item-main-info">
-                    <h1>Будиночок котячий</h1>
-                    <div>
-                        <span class="star">&starf;</span>
-                        <span class="star">&starf;</span>
-                        <span class="star">&starf;</span>
-                        <span class="star">&starf;</span>
-                        <span class="star">&starf;</span>
-                        <span class="available">Є в наявності</span>
+                <div class="main-info-buy">
+                    <div class="main-info">
+                        <h1>Будиночок котячий</h1>
+                        <div>
+                            <span class="star">&starf;</span>
+                            <span class="star">&starf;</span>
+                            <span class="star">&starf;</span>
+                            <span class="star">&starf;</span>
+                            <span class="star">&starf;</span>
+                            <span class="available">Є в наявності</span>
+                        </div>
                     </div>
+
                     <div class="price-buy">
                         <h2>798₴</h2>
                         <div class="buy">
@@ -74,6 +95,13 @@
                         </div>
                     </div>
                     
+                </div>
+            </div>
+            <div class="price-buy">
+                <h2>798₴</h2>
+                <div class="buy">
+                    <img src="icons/white-cart.svg" alt="">
+                    <span>Купити</span>
                 </div>
             </div>
 
@@ -110,58 +138,62 @@
                 <h2>Схожі товари</h2>
                 <div class="similars-content">
                     <img src="icons/arrow-left.svg" alt="" class="arrow">
-                    <div class="similars-item">
-                        <img src="images/info/similars1.jpg" alt="">
-                        <div class="item-info">
-                            <p>Будиночок для кота з лежанкою</p>
-                            <p class="item-price">1700₴</p>
+                    <div class="similars-items">
+                        <div class="similars-item">
+                            <a href="info.html"><img src="images/info/similars1.jpg" alt=""></a>
+                            <div class="item-info">
+                                <p><a href="info.html">Будиночок для кота з лежанкою</a></p>
+                                <p class="item-price">1700₴</p>
+                            </div>
+                        </div>
+                        <div class="similars-item">
+                            <a href="info.html"><img src="images/info/similars2.jpg" alt=""></a>
+                            <div class="item-info">
+                                <p><a href="info.html">Круглий будиночок з ле...</a></p>
+                                <p class="item-price">1670₴</p>
+                            </div>
+                        </div>
+                        <div class="similars-item">
+                            <a href="info.html"><img src="images/info/similars3.jpg" alt=""></a>
+                            <div class="item-info">
+                                <p><a href="info.html">Круглий будиночок з ле...</a></p>
+                                <p class="item-price">3850₴</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="similars-item">
-                        <img src="images/info/similars2.jpg" alt="">
-                        <div class="item-info">
-                            <p>Круглий будиночок з ле...</p>
-                            <p class="item-price">1670₴</p>
-                        </div>
-                    </div>
-                    <div class="similars-item">
-                        <img src="images/info/similars3.jpg" alt="">
-                        <div class="item-info">
-                            <p>Круглий будиночок з ле...</p>
-                            <p class="item-price">3850₴</p>
-                        </div>
-                    </div>
-                    <img src="icons/arrow-right.svg" alt="" class="arrow" id="right-arrow">
+                    <img src="icons/arrow-right.svg" alt="" class="arrow">
                 </div>
             </div>
         </div>
 
         <!-- Footer -->
         <div class="footer">
-            <div class="Categories">
-                <h2>Категорії</h2>
-                <p>Собаки</p>
-                <p>Коти</p>
-                <p>Птахи</p>
-                <p>Гризуни</p>
-                <p>Риби</p>
- 
-            </div>
+            <div class="container">
+                <div class="Categories">
+                    <h2>Категорії</h2>
+                    <p><a href="container.html">Собаки</a></p>
+                    <p><a href="container.html">Коти</a></p>
+                    <p><a href="container.html">Птахи</a></p>
+                    <p><a href="container.html">Гризуни</a></p>
+                    <p><a href="container.html">Риби</a></p>
+    
+                </div>
 
-            <div class="contacts">
-                <h2>Контакти</h2>
-                <p>+380961234567</p>
-                <p>yourlovelypets@gmail.com</p>
-                <img src="icons/instagram.svg" alt="">
-                <img src="icons/facebook.svg" alt="" class="facebook">
-                <img src="icons/twitter.svg" alt="">
-            </div>
+                <div class="contacts">
+                    <h2>Контакти</h2>
+                    <p><a href="tel:+380962064167">+380961234567</a></p>
+                    <p><a href="mailto:yourlovelypets@gmail.com">yourlovelypets@gmail.com</a></p>
+                    <a href=""><img src="icons/instagram.svg" alt="" class="instagram"></a>
+                    <a href=""><img src="icons/facebook.svg" alt="" class="facebook"></a>
+                    <a href=""><img src="icons/twitter.svg" alt="" class="twitter"></a>
+                </div>
 
-            <div class="payment">
-                <h2>Оплата</h2>
-                <img src="icons/mastercard.svg" alt="" class="mastercard">
-                <img src="icons/visa.svg" alt="" class="visa">
-                <img src="icons/applepay.svg" alt="" class="applepay">
+                <div class="payment">
+                    <h2>Оплата</h2>
+                    <img src="icons/mastercard.svg" alt="" class="mastercard">
+                    <img src="icons/visa.svg" alt="" class="visa">
+                    <img src="icons/applepay.svg" alt="" class="applepay">
+                </div>
             </div>
 
         </div>

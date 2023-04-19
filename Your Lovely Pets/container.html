@@ -15,36 +15,49 @@
     <div class="content">
         <!-- Header -->
         <div class="header">
-            <a href="landing.html" target="_blank" class="landing-href">
-                <div class="logo">
-                    <img class="pawprint" src="icons/pawprint.svg" alt="">
-                    <div>
-                        <p class="your">Your</p>
-                        <p class="lovely">Lovely</p>
-                        <p class="pets">Pets</p>
-                    </div>
+            <div class="container">
+                <div class="logo-menu">
+                    <img src="icons/menu-hamburger-svgrepo-com.svg" alt="" class="menubtn">
+                    <a href="landing.html" class="landing-href">
+                        <div class="logo">
+                            <img class="pawprint" src="icons/pawprint.svg" alt="">
+                            <div>
+                                <p class="your">Your</p>
+                                <p class="lovely">Lovely</p>
+                                <p class="pets">Pets</p>
+                            </div>
+                        </div>
+                    </a>
                 </div>
-            </a>
-            <!--Categories-->
-            <div class="categories">
-                <span class="dogs">Собаки</span>
-                <span class="cats">Коти</span>
-                <span class="birds">Птахи</span>
-                <span class="rodents">Гризуни</span>
-                <span class="fish">Риби</span>
+                <!--Categories-->
+                <div class="categories">
+                    <a href="container.html" class="dogs">Собаки</a> 
+                    <a href="container.html" class="cats">Коти</a>
+                    <a href="container.html" class="birds">Птахи</a>
+                    <a href="container.html" class="rodents">Гризуни</a>
+                    <a href="container.html" class="fish">Риби</a>
+                </div>
+                
+                <div class="user-cart">
+                    <img src="icons/user.svg" alt="" class="user">
+                    <img src="icons/cart.svg" alt="" class="cart">
+                </div>
             </div>
-            
-            <img src="icons/user.svg" alt="" class="user">
-            <img src="icons/cart.svg" alt="" class="cart">
 
         </div>
 
         <!--Main part-->
         <div class="container-main">
             <h1>Аксесуари для собак</h1>
-            <div class="sorting">
-                <span>За рейтингом</span>
-                <img src="icons/arrow-down.svg" alt="">
+            <div class="filters-sorting">
+                <div class="filtersbtn">
+                    <img src="icons/filters.svg" alt="">
+                    <span>Фільтри</span>
+                </div>
+                <div class="sorting">
+                    <span>За рейтингом</span>
+                    <img src="icons/arrow-down.svg" alt="">
+                </div>
             </div>
             <div class="filters-items">
                 <div class="filters">
@@ -110,182 +123,178 @@
 
                 </div>
                 <div class="items">
-                    <div class="items-block" id="first-block">
-                        <div class="item" id="first-item-in-block">
-                            <img src="images/container/img1.jpg" alt="">
-                            <p>Намордник пластиковий Trixie</p>
-                            <div class="stars">
-                                <span>&starf;</span>
-                                <span>&starf;</span>
-                                <span>&starf;</span>
-                                <span>&starf;</span>
-                                <span>&starf;</span>
-                            </div>
-                            <div class="price-cart">
-                                <p>200₴</p>
-                                <img src="icons/green-cart.svg" alt="">
-                            </div>
-                            <span>Є в наявності</span>
-
+                    <div class="item" id="first-item-in-block">
+                        <a href="info.html"><img src="images/container/img1.jpg" alt=""></a>
+                        <p><a href="info.html">Намордник пластиковий Trixie</a></p>
+                        <div class="stars">
+                            <span>&starf;</span>
+                            <span>&starf;</span>
+                            <span>&starf;</span>
+                            <span>&starf;</span>
+                            <span>&starf;</span>
                         </div>
-
-                        <div class="item">
-                            <img src="images/container/img2.jpg" alt="">
-                            <p>Шнурок для адресника з паракорду</p>
-                            <div class="stars">
-                                <span>&starf;</span>
-                                <span>&starf;</span>
-                                <span>&starf;</span>
-                                <span>&starf;</span>
-                                <span>&starf;</span>
-                            </div>
-                            <div class="price-cart">
-                                <p>80₴</p>
-                                <img src="icons/green-cart.svg" alt="">
-                            </div>
-                            <span>Є в наявності</span>
-
+                        <div class="price-cart">
+                            <p>200₴</p>
+                            <img src="icons/green-cart.svg" alt="">
                         </div>
+                        <span>Є в наявності</span>
 
-                        <div class="item">
-                            <img src="images/container/img3.jpg" alt="">
-                            <p>Намордник гнучкий Pet Nova Flexy-L 35 см</p>
-                            <div class="stars">
-                                <span>&starf;</span>
-                                <span>&starf;</span>
-                                <span>&starf;</span>
-                                <span>&starf;</span>
-                                <span>&starf;</span>
-                            </div>
-                            <div class="price-cart">
-                                <p>330₴</p>
-                                <img src="icons/green-cart.svg" alt="">
-                            </div>
-                            <span>Є в наявності</span>
-
-                        </div>
                     </div>
 
-                    <div class="items-block">
-                        <div class="item" id="first-item-in-block">
-                            <img src="images/container/img4.jpg" alt="">
-                            <p>Брелок-ліхтарик для собак Trixie</p>
-                            <div class="stars">
-                                <span>&starf;</span>
-                                <span>&starf;</span>
-                                <span>&starf;</span>
-                                <span>&starf;</span>
-                                <span>&starf;</span>
-                            </div>
-                            <div class="price-cart">
-                                <p>123₴</p>
-                                <img src="icons/green-cart.svg" alt="">
-                            </div>
-                            <span>Є в наявності</span>
-
+                    <div class="item">
+                        <a href="info.html"><img src="images/container/img2.jpg" alt=""></a>
+                        <p><a href="info.html">Шнурок для адресника з паракорду</a></p>
+                        <div class="stars">
+                            <span>&starf;</span>
+                            <span>&starf;</span>
+                            <span>&starf;</span>
+                            <span>&starf;</span>
+                            <span>&starf;</span>
                         </div>
-
-                        <div class="item">
-                            <img src="images/container/img5.jpg" alt="">
-                            <p>Намордник Collar WAUDOG</p>
-                            <div class="stars">
-                                <span>&starf;</span>
-                                <span>&starf;</span>
-                                <span>&starf;</span>
-                                <span>&starf;</span>
-                                <span>&starf;</span>
-                            </div>
-                            <div class="price-cart">
-                                <p>198₴</p>
-                                <img src="icons/green-cart.svg" alt="">
-                            </div>
-                            <span>Є в наявності</span>
-
+                        <div class="price-cart">
+                            <p>80₴</p>
+                            <img src="icons/green-cart.svg" alt="">
                         </div>
+                        <span>Є в наявності</span>
 
-                        <div class="item">
-                            <img src="images/container/img6.jpg" alt="">
-                            <p>Намордник нейлоновий Lucky Pet</p>
-                            <div class="stars">
-                                <span>&starf;</span>
-                                <span>&starf;</span>
-                                <span>&starf;</span>
-                                <span>&starf;</span>
-                                <span>&starf;</span>
-                            </div>
-                            <div class="price-cart">
-                                <p>167₴</p>
-                                <img src="icons/green-cart.svg" alt="">
-                            </div>
-                            <span>Є в наявності</span>
-
-                        </div>
                     </div>
 
-                    <div class="items-block">
-                        <div class="item" id="first-item-in-block">
-                            <img src="images/container/img7.jpg" alt="">
-                            <p>Адресник для собак і котів металевий WAUDOG</p>
-                            <div class="stars">
-                                <span>&starf;</span>
-                                <span>&starf;</span>
-                                <span>&starf;</span>
-                                <span>&starf;</span>
-                                <span>&starf;</span>
-                            </div>
-                            <div class="price-cart">
-                                <p>103₴</p>
-                                <img src="icons/green-cart.svg" alt="">
-                            </div>
-                            <span>Є в наявності</span>
-
+                    <div class="item">
+                        <a href="info.html"><img src="images/container/img3.jpg" alt=""></a>
+                        <p><a href="info.html">Намордник гнучкий Pet Nova Flexy-L 35 см</a></p>
+                        <div class="stars">
+                            <span>&starf;</span>
+                            <span>&starf;</span>
+                            <span>&starf;</span>
+                            <span>&starf;</span>
+                            <span>&starf;</span>
                         </div>
-
-                        <div class="item">
-                            <img src="images/container/img8.jpg" alt="">
-                            <p>Намордник Collar м’який №2 </p>
-                            <div class="stars">
-                                <span>&starf;</span>
-                                <span>&starf;</span>
-                                <span>&starf;</span>
-                                <span>&starf;</span>
-                                <span>&starf;</span>
-                            </div>
-                            <div class="price-cart">
-                                <p>315₴</p>
-                                <img src="icons/green-cart.svg" alt="">
-                            </div>
-                            <span>Є в наявності</span>
-
+                        <div class="price-cart">
+                            <p>330₴</p>
+                            <img src="icons/green-cart.svg" alt="">
                         </div>
+                        <span>Є в наявності</span>
 
-                        <div class="item">
-                            <img src="images/container/img9.jpg" alt="">
-                            <p>Намордник нейлоновий Collar DOGextreme №3</p>
-                            <div class="stars">
-                                <span>&starf;</span>
-                                <span>&starf;</span>
-                                <span>&starf;</span>
-                                <span>&starf;</span>
-                                <span>&starf;</span>
-                            </div>
-                            <div class="price-cart">
-                                <p>100₴</p>
-                                <img src="icons/green-cart.svg" alt="">
-                            </div>
-                            <span>Є в наявності</span>
+                    </div>
+        
+                    <div class="item" id="first-item-in-block">
+                        <a href="info.html"><img src="images/container/img4.jpg" alt=""></a>
+                        <p><a href="info.html">Брелок-ліхтарик для собак Trixie</a></p>
+                        <div class="stars">
+                            <span>&starf;</span>
+                            <span>&starf;</span>
+                            <span>&starf;</span>
+                            <span>&starf;</span>
+                            <span>&starf;</span>
                         </div>
+                        <div class="price-cart">
+                            <p>123₴</p>
+                            <img src="icons/green-cart.svg" alt="">
+                        </div>
+                        <span>Є в наявності</span>
+
+                    </div>
+
+                    <div class="item">
+                        <a href="info.html"><img src="images/container/img5.jpg" alt=""></a>
+                        <p><a href="info.html">Намордник Collar WAUDOG</a></p>
+                        <div class="stars">
+                            <span>&starf;</span>
+                            <span>&starf;</span>
+                            <span>&starf;</span>
+                            <span>&starf;</span>
+                            <span>&starf;</span>
+                        </div>
+                        <div class="price-cart">
+                            <p>198₴</p>
+                            <img src="icons/green-cart.svg" alt="">
+                        </div>
+                        <span>Є в наявності</span>
+
+                    </div>
+
+                    <div class="item">
+                        <a href="info.html"><img src="images/container/img6.jpg" alt=""></a>
+                        <p><a href="info.html">Намордник нейлоновий Lucky Pet</a></p>
+                        <div class="stars">
+                            <span>&starf;</span>
+                            <span>&starf;</span>
+                            <span>&starf;</span>
+                            <span>&starf;</span>
+                            <span>&starf;</span>
+                        </div>
+                        <div class="price-cart">
+                            <p>167₴</p>
+                            <img src="icons/green-cart.svg" alt="">
+                        </div>
+                        <span>Є в наявності</span>
+
+                    </div>
+                
+                    <div class="item" id="first-item-in-block">
+                        <a href="info.html"><img src="images/container/img7.jpg" alt=""></a>
+                        <p><a href="info.html">Адресник для собак і котів металевий WAUDOG</a></p>
+                        <div class="stars">
+                            <span>&starf;</span>
+                            <span>&starf;</span>
+                            <span>&starf;</span>
+                            <span>&starf;</span>
+                            <span>&starf;</span>
+                        </div>
+                        <div class="price-cart">
+                            <p>103₴</p>
+                            <img src="icons/green-cart.svg" alt="">
+                        </div>
+                        <span>Є в наявності</span>
+
+                    </div>
+
+                    <div class="item">
+                        <a href="info.html"><img src="images/container/img8.jpg" alt=""></a>
+                        <p><a href="info.html">Намордник Collar м’який №2</a></p>
+                        <div class="stars">
+                            <span>&starf;</span>
+                            <span>&starf;</span>
+                            <span>&starf;</span>
+                            <span>&starf;</span>
+                            <span>&starf;</span>
+                        </div>
+                        <div class="price-cart">
+                            <p>315₴</p>
+                            <img src="icons/green-cart.svg" alt="">
+                        </div>
+                        <span>Є в наявності</span>
+
+                    </div>
+
+                    <div class="item">
+                        <a href="info.html"><img src="images/container/img9.jpg" alt=""></a>
+                        <p><a href="info.html">Намордник нейлоновий Collar DOGextreme №3</a></p>
+                        <div class="stars">
+                            <span>&starf;</span>
+                            <span>&starf;</span>
+                            <span>&starf;</span>
+                            <span>&starf;</span>
+                            <span>&starf;</span>
+                        </div>
+                        <div class="price-cart">
+                            <p>100₴</p>
+                            <img src="icons/green-cart.svg" alt="">
+                        </div>
+                        <span>Є в наявності</span>
                     </div>
                     <div class="pages-navigation">
-                        <img src="icons/arrow-left.svg" alt="" class="left-arrow">
-                        <div class="first-page"><span>1</span></div>
-                        <div><span>2</span></div>
-                        <div><span>3</span></div>
-                        <div><span>4</span></div>
-                        <div><span>5</span></div>
-                        <div><span>...</span></div>
-                        <div><span>10</span></div>
-                        <img src="icons/arrow-right.svg" alt="" class="right-arrow">
+                        <div><img src="icons/arrow-left.svg" alt="" class="left-arrow"></div>
+                        <div class="pages">
+                            <div class="first-page"><span>1</span></div>
+                            <div><span>2</span></div>
+                            <div><span>3</span></div>
+                            <div><span>4</span></div>
+                            <div><span>5</span></div>
+                            <div><span>...</span></div>
+                            <div><span>10</span></div>
+                        </div>
+                        <div><img src="icons/arrow-right.svg" alt="" class="right-arrow"></div>
                     </div>
                 </div>
 
@@ -295,30 +304,32 @@
 
         <!-- Footer -->
         <div class="footer">
-            <div class="Categories">
-                <h2>Категорії</h2>
-                <p>Собаки</p>
-                <p>Коти</p>
-                <p>Птахи</p>
-                <p>Гризуни</p>
-                <p>Риби</p>
- 
-            </div>
+            <div class="container">
+                <div class="Categories">
+                    <h2>Категорії</h2>
+                    <p><a href="container.html">Собаки</a></p>
+                    <p><a href="container.html">Коти</a></p>
+                    <p><a href="container.html">Птахи</a></p>
+                    <p><a href="container.html">Гризуни</a></p>
+                    <p><a href="container.html">Риби</a></p>
+    
+                </div>
 
-            <div class="contacts">
-                <h2>Контакти</h2>
-                <p>+380961234567</p>
-                <p>yourlovelypets@gmail.com</p>
-                <img src="icons/instagram.svg" alt="">
-                <img src="icons/facebook.svg" alt="" class="facebook">
-                <img src="icons/twitter.svg" alt="">
-            </div>
+                <div class="contacts">
+                    <h2>Контакти</h2>
+                    <p><a href="tel:+380962064167">+380961234567</a></p>
+                    <p><a href="mailto:yourlovelypets@gmail.com">yourlovelypets@gmail.com</a></p>
+                    <a href=""><img src="icons/instagram.svg" alt="" class="instagram"></a>
+                    <a href=""><img src="icons/facebook.svg" alt="" class="facebook"></a>
+                    <a href=""><img src="icons/twitter.svg" alt="" class="twitter"></a>
+                </div>
 
-            <div class="payment">
-                <h2>Оплата</h2>
-                <img src="icons/mastercard.svg" alt="" class="mastercard">
-                <img src="icons/visa.svg" alt="" class="visa">
-                <img src="icons/applepay.svg" alt="" class="applepay">
+                <div class="payment">
+                    <h2>Оплата</h2>
+                    <img src="icons/mastercard.svg" alt="" class="mastercard">
+                    <img src="icons/visa.svg" alt="" class="visa">
+                    <img src="icons/applepay.svg" alt="" class="applepay">
+                </div>
             </div>
 
         </div>
