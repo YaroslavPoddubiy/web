@@ -1,0 +1,113 @@
+{% extends "main/base.html" %}
+{% load static %}
+{% block main %}
+<div class="info-main">
+    <div class="main-info">
+        <h1>{{ item.name }}</h1>
+        <div>
+            <span class="star">&starf;</span>
+            <span class="star">&starf;</span>
+            <span class="star">&starf;</span>
+            <span class="star">&starf;</span>
+            <span class="star">&starf;</span>
+            <span class="available">Є в наявності</span>
+        </div>
+    </div>
+    <div class="navigation">
+        <p class="about">Про товар</p>
+        <p class="characteristics">Характеристики</p>
+        <p class="feedbacks">Відгуки</p>
+    </div>
+    <div class="images-info">
+        <div class="images">
+            <img src="{% static 'main/media/icons/arrow-left.svg' %}" alt="" class="arrow">
+            <img src="{% static 'main/media/images/items/' %}{{ item.id }}/1.jpg" alt="" class="big-image">
+            <img src="{% static 'main/media/icons/arrow-right.svg' %}" alt="" class="arrow">
+
+            <div class="small-images">
+                <img src="{% static 'main/media/images/items/' %}{{ item.id }}/1.jpg" alt="" class="current-small-image">
+            </div>
+        </div>
+        <div class="main-info-buy">
+            <div class="main-info">
+                <h1>{{ item.name }}</h1>
+                <div>
+                    <span class="star">&starf;</span>
+                    <span class="star">&starf;</span>
+                    <span class="star">&starf;</span>
+                    <span class="star">&starf;</span>
+                    <span class="star">&starf;</span>
+                    <span class="available">Є в наявності</span>
+                </div>
+            </div>
+
+            <div class="price-buy">
+                <h2>{{ item.price }}₴</h2>
+                <div class="buy">
+                    <img src="{% static 'main/media/icons/white-cart.svg' %}" alt="">
+                    <span>Купити</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="price-buy">
+        <h2>{{ item.price }}₴</h2>
+        <div class="buy">
+            <img src="{% static 'main/media/icons/white-cart.svg' %}" alt="">
+            <span>Купити</span>
+        </div>
+    </div>
+
+    {% if item.description %}
+    <div class="description">
+        <h2>Опис</h2>
+        <p>
+           {{ item.description }}
+        </p>
+    </div>
+    {% endif %}
+
+    {% if item.keys %}
+    <div class="characteristics">
+        <h2>Характеристики</h2>
+        <div class="characteristics-content">
+            <div class="keys">
+                {% for key in item.keys %}
+                <p>{{ key }}</p>
+                {% endfor %}
+            </div>
+
+            <div class="values">
+                {% for value in item.values %}
+                <p>{{ value }}</p>
+                {% endfor %}
+            </div>
+        </div>
+    {% endif %}
+    </div>
+    {% if similar_items %}
+    <div class="similars">
+        <h2>Схожі товари</h2>
+        <div class="similars-content">
+            <div class="similars-items">
+                {% for item in similar_items %}
+                    <div class="similars-item">
+                        <a href="http://127.0.0.1:8000/main/info/?id={{ item.id }}">
+                            <img src="{% static 'main/media/images/items/' %}{{ item.id }}/1.jpg" alt="">
+                        </a>
+                        <div class="item-info">
+                            <p><a href="http://127.0.0.1:8000/main/info/?id={{ item.id }}">
+                                {{ item.name }}
+                            </a></p>
+                            <p class="item-price">{{ item.price }}₴</p>
+                        </div>
+                    </div>
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

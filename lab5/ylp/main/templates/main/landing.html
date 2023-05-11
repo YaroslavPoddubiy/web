@@ -1,0 +1,114 @@
+{% extends "main/base.html" %}
+{% load static %}
+{% block main %}
+    <!--Main image-->
+    <div class="main-image">
+        <img src="{% static 'main/media/images/landing/animals.jpg' %}" alt="">
+        <h1 class="message">Зоомагазин Your Lovely Pets<br>Скарбничка для ваших домашніх улюбленців</h1>
+        <div class="catalog"><a href="http://127.0.0.1:8000/main/container">Каталог</a></div>
+    </div>
+
+    <!--Main part-->
+    <div class="landing-main">
+        <!-- Dogs -->
+        <div class="Dogs">
+            <img src="{% static 'main/media/images/landing/dog.jpg' %}" alt="" class="dog-photo">
+
+            <ul><a href="http://127.0.0.1:8000/main/container/?for=dogs">Товари для собак</a>
+                <li><a href="http://127.0.0.1:8000/main/container/?for=dogs&group=food">Корм</a></li>
+                <li><a href="http://127.0.0.1:8000/main/container/?for=dogs&group=dainty">Ласощі</a></li>
+                <li><a href="http://127.0.0.1:8000/main/container/?for=dogs&group=clothing">Одяг</a></li>
+                <li><a href="http://127.0.0.1:8000/main/container/?for=dogs&group=care">Догляд і здоров’я</a></li>
+                <li><a href="http://127.0.0.1:8000/main/container/?for=dogs&group=toys">Іграшки</a></li>
+                <li><a href="http://127.0.0.1:8000/main/container/?for=dogs&group=accessories">Аксесуари</a></li>
+                <li><a href="http://127.0.0.1:8000/main/container/?for=dogs&group=couches">Лежанки</a></li>
+            </ul>
+
+        </div>
+
+        <!-- Cats -->
+        <div class="Cats">
+            <ul><a href="http://127.0.0.1:8000/main/container/?for=cats">Товари для котів</a>
+                <li><a href="http://127.0.0.1:8000/main/container/?for=cats&group=food">Корм</a></li>
+                <li><a href="http://127.0.0.1:8000/main/container/?for=cats&group=clothing">Одяг</a></li>
+                <li><a href="http://127.0.0.1:8000/main/container/?for=cats&group=care">Догляд і здоров’я</a></li>
+                <li><a href="http://127.0.0.1:8000/main/container/?for=cats&group=toys">Іграшки</a></li>
+                <li><a href="http://127.0.0.1:8000/main/container/?for=cats&group=accessories">Аксесуари</a></li>
+                <li><a href="http://127.0.0.1:8000/main/container/?for=cats&group=houses">Будиночки</a></li>
+                <li><a href="http://127.0.0.1:8000/main/container/?for=cats&group=scratches">Дряпки</a></li>
+            </ul>
+
+            <img src="{% static 'main/media/images/landing/cat.jpg' %}" alt="" class="cat-photo">
+
+        </div>
+
+        <!-- Birds -->
+        <div class="Birds">
+            <img src="{% static 'main/media/images/landing/parrot.jpg' %}" alt="" class="bird-photo">
+            <ul><a href="http://127.0.0.1:8000/main/container/?for=birds">Товари для птахів</a>
+                <li><a href="http://127.0.0.1:8000/main/container/?for=birds&group=food">Корм</a></li>
+                <li><a href="http://127.0.0.1:8000/main/container/?for=birds&group=dainty">Ласощі</a></li>
+                <li><a href="http://127.0.0.1:8000/main/container/?for=birds&group=care">Догляд і здоров’я</a></li>
+                <li><a href="http://127.0.0.1:8000/main/container/?for=birds&group=cages">Клітки</a></li>
+                <li><a href="http://127.0.0.1:8000/main/container/?for=birds&group=accessories">Аксесуари</a></li>
+            </ul>
+
+        </div>
+
+        <!-- Rodents -->
+        <div class="Rodents">
+            <ul><a href="http://127.0.0.1:8000/main/container/?for=rodents">Товари для гризунів</a>
+                <li><a href="http://127.0.0.1:8000/main/container/?for=rodents&group=food">Корм</a></li>
+                <li><a href="http://127.0.0.1:8000/main/container/?for=rodents&group=care">Догляд і здоров’я</a></li>
+                <li><a href="http://127.0.0.1:8000/main/container/?for=rodents&group=cages">Клітки</a></li>
+                <li><a href="http://127.0.0.1:8000/main/container/?for=rodents&group=accessories">Аксесуари</a></li>
+            </ul>
+
+            <img src="{% static 'main/media/images/landing/rodent.jpg' %}" alt="" class="rodent-photo">
+
+        </div>
+
+        <!-- Fish -->
+        <div class="Fish">
+            <img src="{% static 'main/media/images/landing/fish.jpg' %}" alt="" class="fish-photo">
+            <ul><a href="http://127.0.0.1:8000/main/container/?for=fish">Товари для рибок</a>
+                <li><a href="http://127.0.0.1:8000/main/container/?for=fish&group=food">Корм</a></li>
+                <li><a href="http://127.0.0.1:8000/main/container/?for=fish&group=care">Догляд і здоров’я</a></li>
+                <li><a href="http://127.0.0.1:8000/main/container/?for=fish&group=aquariums">Акваріуми</a></li>
+                <li><a href="http://127.0.0.1:8000/main/container/?for=fish&group=accessories">Аксесуари</a></li>
+            </ul>
+
+        </div>
+
+    </div>
+
+    <!-- Features -->
+    <div class="features">
+        <div class="container">
+            <div class="cashback">
+                <img src="{% static 'main/media/icons/cashback.svg' %}" alt="">
+                <p>Вигідна система<br>кешбеку</p>
+            </div>
+
+            <div class="quality">
+                <img src="{% static 'main/media/icons/quality.svg' %}" alt="">
+                <p>Висока якість<br>товарів</p>
+            </div>
+
+            <div class="delivery">
+                <img src="{% static 'main/media/icons/delivery.svg' %}" alt="">
+                <p>Безкоштовна<br>доставка</p>
+            </div>
+
+            <div class="time">
+                <img src="{% static 'main/media/icons/time.svg' %}" alt="">
+                <p>Швидке<br>обслуговування</p>
+            </div>
+
+            <div class="assortment">
+                <img src="{% static 'main/media/icons/assortment.svg' %}" alt="">
+                <p>Широкий<br>асортимент</p>
+            </div>
+        </div>
+    </div>
+{% endblock %}

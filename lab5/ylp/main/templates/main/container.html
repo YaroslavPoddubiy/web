@@ -1,0 +1,124 @@
+{% extends "main/base.html" %}
+{% load static %}
+{% block main %}
+    <!--Main part-->
+        <div class="container-main">
+            <h1>Аксесуари для собак</h1>
+            <div class="filters-sorting">
+                <div class="filtersbtn">
+                    <img src="{% static 'main/media/icons/filters.svg' %}" alt="">
+                    <span>Фільтри</span>
+                </div>
+                <div class="sorting">
+                    <span>За рейтингом</span>
+                    <img src="{% static 'main/media/icons/arrow-down.svg' %}" alt="">
+                </div>
+            </div>
+            <div class="filters-items">
+                <form class="filters" method="get">
+                    <div class="type">
+                        <h2>Тип</h2>
+                        <div>
+                            <input type="checkbox" name="type" value="value">
+                            <span>Намордники</span>
+                        </div>
+
+                        <div>
+                            <input type="checkbox" name="type" value="value2">
+                            <span>Повідки</span>
+                        </div>
+
+                        <div>
+                            <input type="checkbox">
+                            <span>Ошийники</span>
+                        </div>
+
+                        <div>
+                            <input type="checkbox">
+                            <span>Брелоки</span>
+                        </div>
+
+                    </div>
+
+                    <div class="country">
+                        <h2>Країна-виробник</h2>
+                        <div>
+                            <input type="checkbox">
+                            <span>Україна</span>
+                        </div>
+
+                        <div>
+                            <input type="checkbox">
+                            <span>Німеччина</span>
+                        </div>
+
+                        <div>
+                            <input type="checkbox">
+                            <span>Польща</span>
+                        </div>
+
+                    </div>
+
+                    <div class="price">
+                        <h2>Ціна</h2>
+                        <div class="price-input">
+                            <div class="from">
+                                <h3>Від</h3>
+                                <input type="text">
+                            </div>
+
+                            <div class="to">
+                                <h3>До</h3>
+                                <input type="text">
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <button type="submit">Показати</button>
+                </form>
+                <div class="items">
+                    {% if not items %}
+                    <h2 style="margin: 60px auto auto auto">За вашим запитом нічого не знайдено</h2>
+                    {% else %}
+                        {% for item in items %}
+                            <div class="item">
+                            <a href="http://127.0.0.1:8000/main/info/?id={{ item.id }}">
+                                <img src="{% static 'main/media/images/items/' %}{{ item.id }}/1.jpg" alt=""></a>
+                            <p><a href="http://127.0.0.1:8000/main/info/?id={{ item.id }}">{{ item.name }}</a></p>
+                            <div class="stars">
+                                <span>&starf;</span>
+                                <span>&starf;</span>
+                                <span>&starf;</span>
+                                <span>&starf;</span>
+                                <span>&starf;</span>
+                            </div>
+                            <div class="price-cart">
+                                <p>{{ item.price }}₴</p>
+                                <img src="{% static 'main/media/icons/green-cart.svg' %}" alt="">
+                            </div>
+                            <span>Є в наявності</span>
+
+                        </div>
+                        {% endfor %}
+
+                        <div class="pages-navigation">
+                            <div><img src="{% static 'main/media/icons/arrow-left.svg' %}" alt="" class="left-arrow"></div>
+                            <div class="pages">
+                                <div class="first-page"><span>1</span></div>
+                                <div><span>2</span></div>
+                                <div><span>3</span></div>
+                                <div><span>4</span></div>
+                                <div><span>5</span></div>
+                                <div><span>...</span></div>
+                                <div><span>10</span></div>
+                            </div>
+                            <div><img src="{% static 'main/media/icons/arrow-right.svg' %}" alt="" class="right-arrow"></div>
+                        </div>
+                    {% endif %}
+                </div>
+
+            </div>
+
+        </div>
+{% endblock %}
