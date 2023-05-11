@@ -1,0 +1,196 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Lovely Pets</title>
+    <link rel="icon" href="{% static 'main/media/icons/pawprint.svg' %}">
+    <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="content">
+        <!-- header -->
+        <div class="header">
+            <div class="container">
+                <div class="logo-menu">
+                    <img src="{% static 'main/media/icons/menu-hamburger-svgrepo-com.svg' %}" alt="" class="menubtn">
+                    <a href="http://127.0.0.1:8000/main/?page=landing" class="landing-href">
+                        <div class="logo">
+                            <img class="pawprint" src="{% static 'main/media/icons/pawprint.svg' %}" alt="">
+                            <div>
+                                <p class="your">Your</p>
+                                <p class="lovely">Lovely</p>
+                                <p class="pets">Pets</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!--Categories-->
+                <div class="categories">
+                    <a href="http://127.0.0.1:8000/main/?page=container" class="dogs">Собаки</a>
+                    <a href="http://127.0.0.1:8000/main/?page=container" class="cats">Коти</a>
+                    <a href="http://127.0.0.1:8000/main/?page=container" class="birds">Птахи</a>
+                    <a href="http://127.0.0.1:8000/main/?page=container" class="rodents">Гризуни</a>
+                    <a href="http://127.0.0.1:8000/main/?page=container" class="fish">Риби</a>
+                </div>
+                
+                <div class="user-cart">
+                    <a href="http://127.0.0.1:8000/main/?page=login"><img src="{% static 'main/media/icons/user.svg' %}" alt="" class="user"></a>
+                    <img src="{% static 'main/media/icons/cart.svg' %}" alt="" class="cart">
+                </div>
+            </div>
+
+        </div>
+
+        <!--Main image-->
+        <div class="main-image">
+            <img src="{% static 'main/media/images/landing/animals.jpg' %}" alt="">
+            <h1 class="message">Зоомагазин Your Lovely Pets<br>Скарбничка для ваших домашніх улюбленців</h1>
+            <div class="catalog"><a href="http://127.0.0.1:8000/main/?page=container">Каталог</a></div>
+        </div>
+
+        <!--Main part-->
+        <div class="landing-main">
+            <!-- Dogs -->
+            <div class="Dogs">
+                <img src="{% static 'main/media/images/landing/dog.jpg' %}" alt="" class="dog-photo">
+
+                <ul><a href="http://127.0.0.1:8000/main/?page=container">Товари для собак</a>
+                    <li><a href="http://127.0.0.1:8000/main/?page=container">Корм</a></li>
+                    <li><a href="http://127.0.0.1:8000/main/?page=container">Ласощі</a></li>
+                    <li><a href="http://127.0.0.1:8000/main/?page=container">Одяг</a></li>
+                    <li><a href="http://127.0.0.1:8000/main/?page=container">Догляд і здоров’я</a></li>
+                    <li><a href="http://127.0.0.1:8000/main/?page=container">Іграшки</a></li>
+                    <li><a href="http://127.0.0.1:8000/main/?page=container">Аксесуари</a></li>
+                    <li><a href="http://127.0.0.1:8000/main/?page=container">Лежанки</a></li>
+                </ul>
+      
+            </div>
+
+            <!-- Cats -->
+            <div class="Cats">
+                <ul><a href="http://127.0.0.1:8000/main/?page=container">Товари для котів</a>
+                    <li><a href="http://127.0.0.1:8000/main/?page=container">Корм</a></li>
+                    <li><a href="http://127.0.0.1:8000/main/?page=container">Одяг</a></li>
+                    <li><a href="http://127.0.0.1:8000/main/?page=container">Догляд і здоров’я</a></li>
+                    <li><a href="http://127.0.0.1:8000/main/?page=container">Іграшки</a></li>
+                    <li><a href="http://127.0.0.1:8000/main/?page=container">Аксесуари</a></li>
+                    <li><a href="http://127.0.0.1:8000/main/?page=container">Будиночки</a></li>
+                    <li><a href="http://127.0.0.1:8000/main/?page=container">Дряпки</a></li>
+                </ul>
+
+                <img src="{% static 'main/media/images/landing/cat.jpg' %}" alt="" class="cat-photo">
+                
+            </div>
+
+            <!-- Birds -->
+            <div class="Birds">
+                <img src="{% static 'main/media/images/landing/parrot.jpg' %}" alt="" class="bird-photo">
+                <ul><a href="http://127.0.0.1:8000/main/?page=container">Товари для птахів</a>
+                    <li><a href="http://127.0.0.1:8000/main/?page=container">Корм</a></li>
+                    <li><a href="http://127.0.0.1:8000/main/?page=container">Ласощі</a></li>
+                    <li><a href="http://127.0.0.1:8000/main/?page=container">Догляд і здоров’я</a></li>
+                    <li><a href="http://127.0.0.1:8000/main/?page=container">Клітки</a></li>
+                    <li><a href="http://127.0.0.1:8000/main/?page=container">Аксесуари</a></li>
+                </ul>
+                
+            </div>
+
+            <!-- Rodents -->
+            <div class="Rodents">
+                <ul><a href="http://127.0.0.1:8000/main/?page=container">Товари для гризунів</a>
+                    <li><a href="http://127.0.0.1:8000/main/?page=container">Корм</a></li>
+                    <li><a href="http://127.0.0.1:8000/main/?page=container">Догляд і здоров’я</a></li>
+                    <li><a href="http://127.0.0.1:8000/main/?page=container">Клітки</a></li>
+                    <li><a href="http://127.0.0.1:8000/main/?page=container">Аксесуари</a></li>
+                </ul>
+     
+                <img src="{% static 'main/media/images/landing/rodent.jpg' %}" alt="" class="rodent-photo">
+
+            </div>
+
+            <!-- Fish -->
+            <div class="Fish">
+                <img src="{% static 'main/media/images/landing/fish.jpg' %}" alt="" class="fish-photo">
+                <ul><a href="http://127.0.0.1:8000/main/?page=container">Товари для рибок</a>
+                    <li><a href="http://127.0.0.1:8000/main/?page=container">Корм</a></li>
+                    <li><a href="http://127.0.0.1:8000/main/?page=container">Догляд і здоров’я</a></li>
+                    <li><a href="http://127.0.0.1:8000/main/?page=container">Акваріуми</a></li>
+                    <li><a href="http://127.0.0.1:8000/main/?page=container">Аксесуари</a></li>
+                </ul>
+                
+            </div>
+        
+        </div>
+
+        <!-- Features -->
+        <div class="features">
+            <div class="container">
+                <div class="cashback">
+                    <img src="{% static 'main/media/icons/cashback.svg' %}" alt="">
+                    <p>Вигідна система<br>кешбеку</p>
+                </div>
+                
+                <div class="quality">
+                    <img src="{% static 'main/media/icons/quality.svg' %}" alt="">
+                    <p>Висока якість<br>товарів</p>
+                </div>
+                
+                <div class="delivery">
+                    <img src="{% static 'main/media/icons/delivery.svg' %}" alt="">
+                    <p>Безкоштовна<br>доставка</p>
+                </div>
+                
+                <div class="time">
+                    <img src="{% static 'main/media/icons/time.svg' %}" alt="">
+                    <p>Швидке<br>обслуговування</p>
+                </div>
+                
+                <div class="assortment">
+                    <img src="{% static 'main/media/icons/assortment.svg' %}" alt="">
+                    <p>Широкий<br>асортимент</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <div class="container">
+                <div class="Categories">
+                    <h2>Категорії</h2>
+                    <p><a href="http://127.0.0.1:8000/main/?page=container">Собаки</a></p>
+                    <p><a href="http://127.0.0.1:8000/main/?page=container">Коти</a></p>
+                    <p><a href="http://127.0.0.1:8000/main/?page=container">Птахи</a></p>
+                    <p><a href="http://127.0.0.1:8000/main/?page=container">Гризуни</a></p>
+                    <p><a href="http://127.0.0.1:8000/main/?page=container">Риби</a></p>
+    
+                </div>
+
+                <div class="contacts">
+                    <h2>Контакти</h2>
+                    <p><a href="tel:+380962064167">+380961234567</a></p>
+                    <p><a href="mailto:yourlovelypets@gmail.com">yourlovelypets@gmail.com</a></p>
+                    <a href=""><img src="{% static 'main/media/icons/instagram.svg' %}" alt="" class="instagram"></a>
+                    <a href=""><img src="{% static 'main/media/icons/facebook.svg' %}" alt="" class="facebook"></a>
+                    <a href=""><img src="{% static 'main/media/icons/twitter.svg' %}" alt="" class="twitter"></a>
+                </div>
+
+                <div class="payment">
+                    <h2>Оплата</h2>
+                    <img src="{% static 'main/media/icons/mastercard.svg' %}" alt="" class="mastercard">
+                    <img src="{% static 'main/media/icons/visa.svg' %}" alt="" class="visa">
+                    <img src="{% static 'main/media/icons/applepay.svg' %}" alt="" class="applepay">
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</body>
+</html>

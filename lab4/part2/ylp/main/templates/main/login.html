@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Lovely Pets</title>
+    <link rel="icon" href="{% static 'main/media/icons/pawprint.svg' %}">
+    <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <form method="post">
+        {% csrf_token %}
+        <h1>Вхід</h1>
+        <div>
+            <p><label for="email">Логін</label></p>
+            <input type="text" placeholder="Введіть логін" name="email" id="email" required>
+            <p><label for="password">Пароль</label></p>
+            <input type="password" placeholder="Введіть пароль" name="password" id="password" required>
+        </div>
+        <button type="submit">Увійти</button>
+        <p><a href="http://127.0.0.1:8000/main/?page=signup">Зареєструватися</a></p>
+    </form>
+</body>
