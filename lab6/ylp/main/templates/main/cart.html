@@ -1,0 +1,34 @@
+{% extends "main/base.html" %}
+{% load static %}
+{% block main %}
+    <!--Main part-->
+        <div class="cart-main">
+                <div class="items">
+                    {% if not items %}
+                    <h2 style="margin: 60px auto auto auto">Кошик пустий</h2>
+                    {% else %}
+                        {% for item in items %}
+                            <div class="item">
+                            <a href="http://127.0.0.1:8000/main/info/?id={{ item.id }}">
+                                <img src="{{ item.photos.0.url }}" alt=""></a>
+                            <p><a href="http://127.0.0.1:8000/main/info/?id={{ item.id }}">{{ item.name }}</a></p>
+                            <div class="stars">
+                                <span>&starf;</span>
+                                <span>&starf;</span>
+                                <span>&starf;</span>
+                                <span>&starf;</span>
+                                <span>&starf;</span>
+                            </div>
+                            <div class="price-cart">
+                                <p>{{ item.price }}₴</p>
+                                <a href="http://127.0.0.1:8000/main/del_from_cart/?id={{ item.id }}">Видалити</a>
+                            </div>
+                            <span>Є в наявності</span>
+
+                        </div>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+
+        </div>
+{% endblock %}
