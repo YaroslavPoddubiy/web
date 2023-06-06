@@ -1,0 +1,24 @@
+{% extends "main/base.html" %}
+{% load static %}
+{% block main %}
+    <!--Main part-->
+        <div class="container-main">
+        <form method="post" class="signup-login" style="background-color: #e5e5e5">
+            {% csrf_token %}
+        <h1>Профіль {{ user.user.username }}</h1>
+        <div>
+            <p><label for="username">Логін</label></p>
+            <input type="text" placeholder="{{ user.user.username }}" name="username" id="username">
+            <p><label for="first_name">Ім'я</label></p>
+            <input type="text" placeholder="{{user.user.first_name}}" name="first_name" id="first_name">
+            <p><label for="last_name">Прізвище</label></p>
+            <input type="text" placeholder="{{ user.user.last_name }}" name="last_name" id="last_name">
+            <p><label for="email">Електронна пошта</label></p>
+            <input type="text" placeholder="{{ user.user.email }}" name="email" id="email">
+        </div>
+        <button type="submit" style="margin-right: auto; margin-left: auto">Зберегти зміни</button>
+        <p><a href="http://127.0.0.1:8000/main/logout">Вийти</a></p>
+        </form>
+
+        </div>
+{% endblock %}

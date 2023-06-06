@@ -1,0 +1,190 @@
+{% extends "main/base.html" %}
+{% load static %}
+{% load i18n %}
+{% block main %}
+<div class="info-main">
+    {% if view == "about" %}
+        <div class="main-info">
+            <h1>{{ item.name }}</h1>
+            <div>
+                <span class="star">&starf;</span>
+                <span class="star">&starf;</span>
+                <span class="star">&starf;</span>
+                <span class="star">&starf;</span>
+                <span class="star">&starf;</span>
+                <span class="available">Є в наявності</span>
+            </div>
+        </div>
+    {% endif %}
+        <div class="navigation">
+            <p class="about"{% if view == "about" %} id="current-view" {% endif %}>
+                <a href="http://127.0.0.1:8000/main/info/?id={{ item.id }}&view=about">Про товар</a></p>
+            <p class="characteristics" {% if view == "characteristics" %} id="current-view" {% endif %}>
+                <a href="http://127.0.0.1:8000/main/info/?id={{ item.id }}&view=characteristics">Характеристики</a></p>
+            <p class="feedbacks" {% if view == "feedbacks" %} id="current-view" {% endif %}>
+                <a href="http://127.0.0.1:8000/main/info/?id={{ item.id }}&view=feedbacks">Відгуки</a></p>
+        </div>
+    {% if view == "about" %}
+        <div class="images-info">
+            <div class="images">
+                <button onclick="previous_photo()" style="height: fit-content; background-color: transparent; border: none;">
+                    <img src="{% static 'main/media/icons/arrow-left.svg' %}" alt="" class="arrow">
+                </button>
+                <img src="{{ current_photo.url }}" alt="" class="big-image">
+                <button onclick="next_photo({{ item.photos | length }})" style="height: fit-content; background-color: transparent; border: none;">
+                    <img src="{% static 'main/media/icons/arrow-right.svg' %}" alt="" class="arrow">
+                </button>
+
+                <div class="small-images">
+                    {% for photo in item.photos %}
+                    <img src="{{ photo.url }}" alt="" {% if photo == current_photo %} class="current-small-image" {% endif %}>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="main-info-buy">
+                <div class="main-info">
+                    <h1>{{ item.name }}</h1>
+                    <div>
+                        <span class="star">&starf;</span>
+                        <span class="star">&starf;</span>
+                        <span class="star">&starf;</span>
+                        <span class="star">&starf;</span>
+                        <span class="star">&starf;</span>
+                        <span class="available">Є в наявності</span>
+                    </div>
+                </div>
+
+                <div class="price-buy">
+                    <h2>{{ item.price }}₴</h2>
+                    <div class="buy">
+
+                        <img src="{% static 'main/media/icons/white-cart.svg' %}" alt="">
+                        {% if user and item in user.cart %}
+                            <a href="http://127.0.0.1:8000/main/cart">
+                                <span>У кошику</span>
+                            </a>
+                        {% else %}
+                            <a href="http://127.0.0.1:8000/main/add_to_cart/?id={{ item.id }}&next={{ request.get_full_path }}">
+                                <span>Купити</span>
+                            </a>
+                        {% endif %}
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="price-buy">
+            <h2>{{ item.price }}₴</h2>
+            <div class="buy">
+                <img src="{% static 'main/media/icons/white-cart.svg' %}" alt="">
+                {% if user and item in user.cart %}
+                    <a href="http://127.0.0.1:8000/main/cart">
+                        <span>У кошику</span></a>
+                {% else %}
+                    <a href="http://127.0.0.1:8000/main/add_to_cart/?id={{ item.id }}">
+                        <span>Купити</span></a>
+                {% endif %}
+            </div>
+        </div>
+
+        {% if item.description %}
+        <div class="description">
+            <h2>Опис</h2>
+            <p>
+               {{ item.description }}
+            </p>
+        </div>
+        {% endif %}
+    {% endif %}
+
+    {% if view == "characteristics" and not item.chars %}
+        <h2 style="margin: 60px auto auto auto">Характеристики відсутні</h2>
+    {% endif %}
+
+    {% if item.chars and view == "about" or view == "characteristics" %}
+    <div class="characteristics">
+        <h2>Характеристики</h2>
+        <div class="characteristics-content">
+            <div class="keys">
+                {% for characteristic in item.chars %}
+                <p>{{ characteristic.key }}</p>
+                {% endfor %}
+            </div>
+
+            <div class="values">
+                {% for characteristic in item.chars %}
+                <p>{{ characteristic.value }}</p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    {% endif %}
+    {% if view == "feedbacks" %}
+        <div class="feedbacks-div">
+            {% if feedbacks %}
+                {% for feedback in feedbacks %}
+                    <div class="feedback">
+                        <div class="user-date">
+                            <h2>
+                                {% if feedback.user.user.first_name %}
+                                    {{ feedback.user.user.first_name }} {{ feedback.user.user.last_name }}
+                                {% else %}
+                                    Користувач без імені
+                                {% endif %}
+
+                            </h2>
+                            {% language 'uk' %}
+                            <p>{{ feedback.date }}</p>
+                            {% endlanguage %}
+                        </div>
+
+                        <div class="comment">
+                            <h3>Коментар</h3>
+                            <p>{{ feedback.text }}</p>
+                        </div>
+
+                        {% if feedback.user == user %}
+                        <a href="http://127.0.0.1:8000/main/del_feedback/?id={{ feedback.id }}&next={{ request.get_full_path }}">Видалити</a>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            {% else %}
+                <h2 style="margin: 60px auto auto auto">Ще немає відгуків</h2>
+            {% endif %}
+            <form method="post">
+            {% csrf_token %}
+                <p><label for="feedback">Напишіть {% if not feedbacks %} перший {% endif %}відгук</label></p>
+                <input type="text" id="feedback" name="feedback" placeholder="Введіть коментар..." required>
+                {% if user %}
+                    <button type="submit">Додати відгук</button>
+                {% else %}
+                    <a href="http://127.0.0.1:8000/main/login/?next={{ request.get_full_path }}">Додати відгук</a>
+                {% endif %}
+            </form>
+        </div>
+    {% endif %}
+    {% if view == "about" and similar_items %}
+        <div class="similars">
+            <h2>Схожі товари</h2>
+            <div class="similars-content">
+                <div class="similars-items">
+                    {% for item in similar_items %}
+                        <div class="similars-item">
+                            <a href="http://127.0.0.1:8000/main/info/?id={{ item.id }}">
+                                <img src="{{ item.photos.0.url }}" alt="">
+                            </a>
+                            <div class="item-info">
+                                <p><a href="http://127.0.0.1:8000/main/info/?id={{ item.id }}">
+                                    {{ item.name }}
+                                </a></p>
+                                <p class="item-price">{{ item.price }}₴</p>
+                            </div>
+                        </div>
+                    {% endfor %}
+
+                </div>
+            </div>
+        </div>
+    {% endif %}
+</div>
+{% endblock %}

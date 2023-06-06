@@ -1,0 +1,106 @@
+{% extends "main/base.html" %}
+{% load static %}
+{% block main %}
+    <!--Main part-->
+        <div class="container-main">
+            <div class="filters-sorting">
+                <div class="filtersbtn">
+                    <img src="{% static 'main/media/icons/filters.svg' %}" alt="">
+                    <span>Фільтри</span>
+                </div>
+                <select class="sorting" onchange="sort(this)">
+                    <option value="За рейтингом" {% if sort == 'За рейтингом' %} selected {% endif %}>За рейтингом</option>
+                    <option value="Від дешевих до дорогих" {% if sort == 'Від дешевих до дорогих' %} selected {% endif %}>Від дешевих до дорогих</option>
+                    <option value="Від дорогих до дешевих" {% if sort == 'Від дорогих до дешевих' %} selected {% endif %}>Від дорогих до дешевих</option>
+                </select>
+            </div>
+            <div class="filters-items">
+                <div class="filters">
+                    <div class="for">
+                        <h2>Призначення</h2>
+                        {% for for in fors %}
+                            <div>
+                                <input type="checkbox" name="for" value="{{ for.value }}" {% if for.value|lower in for_url %} checked {% endif %}>
+                                <span>{{ for.value }}</span>
+                            </div>
+                        {% endfor %}
+                    </div>
+                    <div class="group">
+                        <h2>Група</h2>
+                        {% for group in groups %}
+                            <div>
+                                <input type="checkbox" name="group" value="{{ group.value }}" {% if group.value|lower in group_url %} checked {% endif %}>
+                                <span>{{ group.value }}</span>
+                            </div>
+                        {% endfor %}
+                    </div>
+                    <div class="type">
+                        <h2>Тип</h2>
+                        {% for type in types %}
+                            <div>
+                                <input type="checkbox" name="type" id="{{ type.value }}" value="{{ type.value }}" {% if type.value|lower in types_url %} checked {% endif %}>
+                                <span>{{ type.value }}</span>
+                            </div>
+                        {% endfor %}
+                    </div>
+
+                    <div class="country">
+                        <h2>Країна-виробник</h2>
+                        {% for country in countries %}
+                            <div>
+                                <input type="checkbox" name="country" value="{{ country.value }}" {% if country.value|lower in country_url %} checked {% endif %}>
+                                <span>{{ country.value }}</span>
+                            </div>
+                        {% endfor %}
+                    </div>
+
+                    <div class="price">
+                        <h2>Ціна</h2>
+                        <div class="price-input">
+                            <div class="from">
+                                <h3>Від</h3>
+                                <input type="number" name="price-from">
+                            </div>
+
+                            <div class="to">
+                                <h3>До</h3>
+                                <input type="number" name="price-to">
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <button onclick="filters()">Показати</button>
+                </div>
+                <div class="items">
+                    {% if not items %}
+                    <h2 style="margin: 60px auto auto auto">За вашим запитом нічого не знайдено</h2>
+                    {% else %}
+                        {% for item in items %}
+                            <div class="item">
+                            <a href="http://127.0.0.1:8000/main/info/?id={{ item.id }}">
+                                <img src="{{ item.photos.0.url }}" alt=""></a>
+                            <p><a href="http://127.0.0.1:8000/main/info/?id={{ item.id }}">{{ item.name }}</a></p>
+                            <div class="stars">
+                                <span>&starf;</span>
+                                <span>&starf;</span>
+                                <span>&starf;</span>
+                                <span>&starf;</span>
+                                <span>&starf;</span>
+                            </div>
+                            <div class="price-cart">
+                                <p>{{ item.price }}₴</p>
+                                <a href="http://127.0.0.1:8000/main/add_to_cart/?id={{ item.id }}&next={{ request.get_full_path }}">
+                                    <img src="{% static 'main/media/icons/green-cart.svg' %}" alt=""></a>
+                            </div>
+                            <span>Є в наявності</span>
+
+                        </div>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+
+            </div>
+
+        </div>
+{% endblock %}
