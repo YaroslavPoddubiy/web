@@ -17,7 +17,7 @@
             <input type="text" placeholder="{{ user.user.email }}" name="email" id="email">
         </div>
         <button type="submit" style="margin-right: auto; margin-left: auto">Зберегти зміни</button>
-        <p><a href="http://127.0.0.1:8000/main/logout">Вийти</a></p>
+        <p><a href="{% url 'main:logout' %}">Вийти</a></p>
         </form>
 
         </div>

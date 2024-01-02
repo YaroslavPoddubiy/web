@@ -78,9 +78,9 @@
                     {% else %}
                         {% for item in items %}
                             <div class="item">
-                            <a href="http://127.0.0.1:8000/main/info/?id={{ item.id }}">
+                            <a href="{% url 'main:info' %}?id={{ item.id }}">
                                 <img src="{{ item.photos.0.url }}" alt=""></a>
-                            <p><a href="http://127.0.0.1:8000/main/info/?id={{ item.id }}">{{ item.name }}</a></p>
+                            <p><a href="{% url 'main:info' %}?id={{ item.id }}">{{ item.name }}</a></p>
                             <div class="stars">
                                 <span>&starf;</span>
                                 <span>&starf;</span>
@@ -90,8 +90,11 @@
                             </div>
                             <div class="price-cart">
                                 <p>{{ item.price }}₴</p>
-                                <a href="http://127.0.0.1:8000/main/add_to_cart/?id={{ item.id }}&next={{ request.get_full_path }}">
-                                    <img src="{% static 'main/media/icons/green-cart.svg' %}" alt=""></a>
+                                <a href="{% if user.is_authenticated %}
+                                               {% url 'main:add_to_cart' %}?id={{ item.id }}&next={{ request.get_full_path }}
+                                           {% else %}
+                                               {% url 'main:login' %}?id={{ item.id }}&next={{ request.get_full_path }}
+                                           {% endif %}"><img src="{% static 'main/media/icons/green-cart.svg' %}" alt=""></a>
                             </div>
                             <span>Є в наявності</span>
 

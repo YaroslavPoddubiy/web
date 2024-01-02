@@ -1758,6 +1758,11 @@ input[type="checkbox"]{
         width: 60px;
     }
 
+    .menubtn img{
+        height: 50px;
+        width: 50px;
+    }
+
     .pawprint{
         height: 64px;
         width: 88px;
@@ -1907,7 +1912,7 @@ input[type="checkbox"]{
         width: 200px;
     }
     
-    .images>.arrow{
+    .images .arrow{
         display: none;
     }
 
@@ -2201,7 +2206,7 @@ input[type="checkbox"]{
 
 /* 695px ---------------------------------------------------------------------------------------------------------------------------*/
 @media (max-width: 695px){
-    .container-main h1{
+    .container-main{
         margin-top: 90px;
     }
 
@@ -2355,6 +2360,18 @@ input[type="checkbox"]{
         padding-right: 30px;
         box-sizing: border-box;
     }
+
+    .feedback h2{
+        font-size: 18px;
+    }
+
+    .feedback h3{
+        font-size: 16px;
+    }
+
+    .feedback p{
+        font-size: 14px;
+    }
 }
 
 /* 560px --------------------------------------------------------------------------------------------------------------------------- */
@@ -2380,6 +2397,11 @@ input[type="checkbox"]{
         width: 50px;
         margin-top: 5px;
         margin-right: 10px;
+    }
+
+    .menubtn img{
+        height: 50px;
+        width: 50px;
     }
 
     .your, .lovely, .pets{
@@ -2548,10 +2570,8 @@ input[type="checkbox"]{
     }
 
     /* container ------------------- */
-    .container-main h1{
+    .container-main{
         margin-top: 70px;
-        font-size: 32px;
-        margin-left: 10px;
     }
 
     .filtersbtn{
@@ -2689,6 +2709,18 @@ input[type="checkbox"]{
         padding-left: 10px;
         padding-right: 10px;
     }
+
+    .feedback h2{
+        font-size: 16px;
+    }
+
+    .feedback h3{
+        font-size: 14px;
+    }
+
+    .feedback p{
+        font-size: 12px;
+    }
 }
 
 /* 480px --------------------------------------------------------------------------------------------------------------------------- */
@@ -2814,8 +2846,7 @@ input[type="checkbox"]{
     }
 
     /* container ----------------------- */
-    .container-main h1{
-        font-size: 24px;
+    .container-main {
         margin-top: 60px;
         margin-left: 10px;
     }
@@ -3130,6 +3161,36 @@ input[type="checkbox"]{
     .item-price{
         margin-top: 10px;
     }
+
+    .feedback h2{
+        font-size: 14px;
+    }
+
+    .feedback h3{
+        font-size: 12px;
+    }
+
+    .feedback p{
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 410px){
+    .images>img{
+
+    }
+
+    .feedback h2{
+        font-size: 12px;
+    }
+
+    .feedback h3{
+        font-size: 12px;
+    }
+
+    .feedback p{
+        font-size: 10px;
+    }
 }
 
 /* 385px ------------------------------------------------------------------------------------------------------------------------ */
@@ -3242,7 +3303,12 @@ input[type="checkbox"]{
         height: 42px;
         width: 42px;
         margin-top: 4px;
-        margin-right: 5px;
+        margin-right: 20px;
+    }
+
+    .menubtn img{
+        height: 50px;
+        width: 50px;
     }
 
     .your, .lovely, .pets{

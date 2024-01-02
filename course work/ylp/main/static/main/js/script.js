@@ -21,7 +21,7 @@ function filters(){
     const types = document.getElementsByName("type");
     const groups = document.getElementsByName("group");
     const country = document.getElementsByName("country");
-    let url = "http://127.0.0.1:8000/main/container/";
+    let url = window.location.protocol + "//" + window.location.host + location.pathname;
     let item_for = '';
     let item_group = '';
     let item_types = '';

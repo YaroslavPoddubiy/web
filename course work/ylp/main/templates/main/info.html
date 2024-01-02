@@ -18,11 +18,11 @@
     {% endif %}
         <div class="navigation">
             <p class="about"{% if view == "about" %} id="current-view" {% endif %}>
-                <a href="http://127.0.0.1:8000/main/info/?id={{ item.id }}&view=about">Про товар</a></p>
+                <a href="{% url 'main:info' %}?id={{ item.id }}&view=about">Про товар</a></p>
             <p class="characteristics" {% if view == "characteristics" %} id="current-view" {% endif %}>
-                <a href="http://127.0.0.1:8000/main/info/?id={{ item.id }}&view=characteristics">Характеристики</a></p>
+                <a href="{% url 'main:info' %}?id={{ item.id }}&view=characteristics">Характеристики</a></p>
             <p class="feedbacks" {% if view == "feedbacks" %} id="current-view" {% endif %}>
-                <a href="http://127.0.0.1:8000/main/info/?id={{ item.id }}&view=feedbacks">Відгуки</a></p>
+                <a href="{% url 'main:info' %}?id={{ item.id }}&view=feedbacks">Відгуки</a></p>
         </div>
     {% if view == "about" %}
         <div class="images-info">
@@ -60,11 +60,11 @@
 
                         <img src="{% static 'main/media/icons/white-cart.svg' %}" alt="">
                         {% if user and item in user.cart %}
-                            <a href="http://127.0.0.1:8000/main/cart">
+                            <a href="{% url 'main:cart' %}">
                                 <span>У кошику</span>
                             </a>
                         {% else %}
-                            <a href="http://127.0.0.1:8000/main/add_to_cart/?id={{ item.id }}&next={{ request.get_full_path }}">
+                            <a href="{% url 'main:add_to_cart' %}?id={{ item.id }}&next={{ request.get_full_path }}">
                                 <span>Купити</span>
                             </a>
                         {% endif %}
@@ -78,10 +78,10 @@
             <div class="buy">
                 <img src="{% static 'main/media/icons/white-cart.svg' %}" alt="">
                 {% if user and item in user.cart %}
-                    <a href="http://127.0.0.1:8000/main/cart">
+                    <a href="{% url 'main:cart' %}">
                         <span>У кошику</span></a>
                 {% else %}
-                    <a href="http://127.0.0.1:8000/main/add_to_cart/?id={{ item.id }}">
+                    <a href="{% url 'main:add_to_cart' %}?id={{ item.id }}">
                         <span>Купити</span></a>
                 {% endif %}
             </div>
@@ -144,7 +144,7 @@
                         </div>
 
                         {% if feedback.user == user %}
-                        <a href="http://127.0.0.1:8000/main/del_feedback/?id={{ feedback.id }}&next={{ request.get_full_path }}">Видалити</a>
+                        <a href="{% url 'main:del_feedback' %}?id={{ feedback.id }}&next={{ request.get_full_path }}">Видалити</a>
                         {% endif %}
                     </div>
                 {% endfor %}
@@ -155,10 +155,11 @@
             {% csrf_token %}
                 <p><label for="feedback">Напишіть {% if not feedbacks %} перший {% endif %}відгук</label></p>
                 <input type="text" id="feedback" name="feedback" placeholder="Введіть коментар..." required>
+                <input type="hidden" id="id" name="id" value="{{ item.id }}">
                 {% if user %}
                     <button type="submit">Додати відгук</button>
                 {% else %}
-                    <a href="http://127.0.0.1:8000/main/login/?next={{ request.get_full_path }}">Додати відгук</a>
+                    <a href="{% url 'main:login' %}?next={{ request.get_full_path }}">Додати відгук</a>
                 {% endif %}
             </form>
         </div>
@@ -170,11 +171,11 @@
                 <div class="similars-items">
                     {% for item in similar_items %}
                         <div class="similars-item">
-                            <a href="http://127.0.0.1:8000/main/info/?id={{ item.id }}">
+                            <a href="{% url 'main:info' %}?id={{ item.id }}">
                                 <img src="{{ item.photos.0.url }}" alt="">
                             </a>
                             <div class="item-info">
-                                <p><a href="http://127.0.0.1:8000/main/info/?id={{ item.id }}">
+                                <p><a href="{% url 'main:info' %}?id={{ item.id }}">
                                     {{ item.name }}
                                 </a></p>
                                 <p class="item-price">{{ item.price }}₴</p>

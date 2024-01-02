@@ -14,28 +14,28 @@
         <div class="Dogs">
             <img src="{% static 'main/media/images/landing/dog.jpg' %}" alt="" class="dog-photo">
 
-            <ul><a href="http://127.0.0.1:8000/main/container/?for=для собак">Товари для собак</a>
-                <li><a href="http://127.0.0.1:8000/main/container/?for=для собак&group=їжа">Їжа</a></li>
+            <ul><a href="{% url 'main:container' %}?for=для собак">Товари для собак</a>
+                <li><a href="{% url 'main:container' %}?for=для собак&group=їжа">Їжа</a></li>
 {#                <li><a href="http://127.0.0.1:8000/main/container/?for=для собак&group=dainty">Ласощі</a></li>#}
-                <li><a href="http://127.0.0.1:8000/main/container/?for=для собак&group=одяг">Одяг</a></li>
-                <li><a href="http://127.0.0.1:8000/main/container/?for=для собак&group=догляд">Догляд і здоров’я</a></li>
-                <li><a href="http://127.0.0.1:8000/main/container/?for=для собак&group=іграшки">Іграшки</a></li>
-                <li><a href="http://127.0.0.1:8000/main/container/?for=для собак&group=аксесуари">Аксесуари</a></li>
-                <li><a href="http://127.0.0.1:8000/main/container/?for=для собак&group=лежанки">Лежанки</a></li>
+                <li><a href="{% url 'main:container' %}?for=для собак&group=одяг">Одяг</a></li>
+                <li><a href="{% url 'main:container' %}?for=для собак&group=догляд">Догляд і здоров’я</a></li>
+                <li><a href="{% url 'main:container' %}?for=для собак&group=іграшки">Іграшки</a></li>
+                <li><a href="{% url 'main:container' %}?for=для собак&group=аксесуари">Аксесуари</a></li>
+                <li><a href="{% url 'main:container' %}?for=для собак&group=лежанки">Лежанки</a></li>
             </ul>
 
         </div>
 
         <!-- Cats -->
         <div class="Cats">
-            <ul><a href="http://127.0.0.1:8000/main/container/?for=для котів">Товари для котів</a>
-                <li><a href="http://127.0.0.1:8000/main/container/?for=для котів&group=іжа">Їжа</a></li>
-                <li><a href="http://127.0.0.1:8000/main/container/?for=для котів&group=одяг">Одяг</a></li>
-                <li><a href="http://127.0.0.1:8000/main/container/?for=для котів&group=догляд">Догляд і здоров’я</a></li>
-                <li><a href="http://127.0.0.1:8000/main/container/?for=для котів&group=іграшки">Іграшки</a></li>
-                <li><a href="http://127.0.0.1:8000/main/container/?for=для котів&group=аксесуари">Аксесуари</a></li>
-                <li><a href="http://127.0.0.1:8000/main/container/?for=для котів&group=будиночки">Будиночки</a></li>
-                <li><a href="http://127.0.0.1:8000/main/container/?for=для котів&group=дряпки">Дряпки</a></li>
+            <ul><a href="{% url 'main:container' %}?for=для котів">Товари для котів</a>
+                <li><a href="{% url 'main:container' %}?for=для котів&group=іжа">Їжа</a></li>
+                <li><a href="{% url 'main:container' %}?for=для котів&group=одяг">Одяг</a></li>
+                <li><a href="{% url 'main:container' %}?for=для котів&group=догляд">Догляд і здоров’я</a></li>
+                <li><a href="{% url 'main:container' %}?for=для котів&group=іграшки">Іграшки</a></li>
+                <li><a href="{% url 'main:container' %}?for=для котів&group=аксесуари">Аксесуари</a></li>
+                <li><a href="{% url 'main:container' %}?for=для котів&group=будиночки">Будиночки</a></li>
+                <li><a href="{% url 'main:container' %}?for=для котів&group=дряпки">Дряпки</a></li>
             </ul>
 
             <img src="{% static 'main/media/images/landing/cat.jpg' %}" alt="" class="cat-photo">
@@ -45,23 +45,23 @@
         <!-- Birds -->
         <div class="Birds">
             <img src="{% static 'main/media/images/landing/parrot.jpg' %}" alt="" class="bird-photo">
-            <ul><a href="http://127.0.0.1:8000/main/container/?for=для птахів">Товари для птахів</a>
-                <li><a href="http://127.0.0.1:8000/main/container/?for=для птахів&group=їжа">Їжа</a></li>
+            <ul><a href="{% url 'main:container' %}?for=для птахів">Товари для птахів</a>
+                <li><a href="{% url 'main:container' %}?for=для птахів&group=їжа">Їжа</a></li>
 {#                <li><a href="http://127.0.0.1:8000/main/container/?for=для птахів&group=dainty">Ласощі</a></li>#}
-                <li><a href="http://127.0.0.1:8000/main/container/?for=для птахів&group=догляд">Догляд і здоров’я</a></li>
-                <li><a href="http://127.0.0.1:8000/main/container/?for=для птахів&group=клітки">Клітки</a></li>
-                <li><a href="http://127.0.0.1:8000/main/container/?for=для птахів&group=аксесуари">Аксесуари</a></li>
+                <li><a href="{% url 'main:container' %}?for=для птахів&group=догляд">Догляд і здоров’я</a></li>
+                <li><a href="{% url 'main:container' %}?for=для птахів&group=клітки">Клітки</a></li>
+                <li><a href="{% url 'main:container' %}?for=для птахів&group=аксесуари">Аксесуари</a></li>
             </ul>
 
         </div>
 
         <!-- Rodents -->
         <div class="Rodents">
-            <ul><a href="http://127.0.0.1:8000/main/container/?for=для гризунів">Товари для гризунів</a>
-                <li><a href="http://127.0.0.1:8000/main/container/?for=для гризунів&group=їжа">Їжа</a></li>
-                <li><a href="http://127.0.0.1:8000/main/container/?for=для гризунів&group=догляд">Догляд і здоров’я</a></li>
-                <li><a href="http://127.0.0.1:8000/main/container/?for=для гризунів&group=клітки">Клітки</a></li>
-                <li><a href="http://127.0.0.1:8000/main/container/?for=для гризунів&group=аксесуари">Аксесуари</a></li>
+            <ul><a href="{% url 'main:container' %}?for=для гризунів">Товари для гризунів</a>
+                <li><a href="{% url 'main:container' %}?for=для гризунів&group=їжа">Їжа</a></li>
+                <li><a href="{% url 'main:container' %}?for=для гризунів&group=догляд">Догляд і здоров’я</a></li>
+                <li><a href="{% url 'main:container' %}?for=для гризунів&group=клітки">Клітки</a></li>
+                <li><a href="{% url 'main:container' %}?for=для гризунів&group=аксесуари">Аксесуари</a></li>
             </ul>
 
             <img src="{% static 'main/media/images/landing/rodent.jpg' %}" alt="" class="rodent-photo">
@@ -71,11 +71,11 @@
         <!-- Fish -->
         <div class="Fish">
             <img src="{% static 'main/media/images/landing/fish.jpg' %}" alt="" class="fish-photo">
-            <ul><a href="http://127.0.0.1:8000/main/container/?for=для риб">Товари для рибок</a>
-                <li><a href="http://127.0.0.1:8000/main/container/?for=для риб&group=їжа">Їжа</a></li>
-                <li><a href="http://127.0.0.1:8000/main/container/?for=для риб&group=догляд">Догляд і здоров’я</a></li>
-                <li><a href="http://127.0.0.1:8000/main/container/?for=для риб&group=акваріуми">Акваріуми</a></li>
-                <li><a href="http://127.0.0.1:8000/main/container/?for=для риб&group=аксесуари">Аксесуари</a></li>
+            <ul><a href="{% url 'main:container' %}?for=для риб">Товари для рибок</a>
+                <li><a href="{% url 'main:container' %}?for=для риб&group=їжа">Їжа</a></li>
+                <li><a href="{% url 'main:container' %}?for=для риб&group=догляд">Догляд і здоров’я</a></li>
+                <li><a href="{% url 'main:container' %}?for=для риб&group=акваріуми">Акваріуми</a></li>
+                <li><a href="{% url 'main:container' %}?for=для риб&group=аксесуари">Аксесуари</a></li>
             </ul>
 
         </div>

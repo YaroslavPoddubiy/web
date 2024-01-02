@@ -20,17 +20,17 @@
             <div class="container">
                 <div class="logo-menu">
                     <div id="dropdown-menu">
-                        <a href="http://127.0.0.1:8000/main/container/?for=для собак" class="dogs">Собаки</a>
-                        <a href="http://127.0.0.1:8000/main/container/?for=для котів" class="cats">Коти</a>
-                        <a href="http://127.0.0.1:8000/main/container/?for=для птахів" class="birds">Птахи</a>
-                        <a href="http://127.0.0.1:8000/main/container/?for=для гризунів" class="rodents">Гризуни</a>
-                        <a href="http://127.0.0.1:8000/main/container/?for=для риб" class="fish">Риби</a>
+                        <a href="{% url 'main:container' %}?for=для собак" class="dogs">Собаки</a>
+                        <a href="{% url 'main:container' %}?for=для котів" class="cats">Коти</a>
+                        <a href="{% url 'main:container' %}?for=для птахів" class="birds">Птахи</a>
+                        <a href="{% url 'main:container' %}?for=для гризунів" class="rodents">Гризуни</a>
+                        <a href="{% url 'main:container' %}?for=для риб" class="fish">Риби</a>
                     </div>
 
                     <button class="menubtn" onclick="dropdown()">
                             <img src="{% static 'main/media/icons/menu.svg' %}" alt="" class="menubtn">
                     </button>
-                    <a href="http://127.0.0.1:8000/main/" class="landing-href">
+                    <a href="{% url 'main:landing' %}" class="landing-href">
                         <div class="logo">
                             <img class="pawprint" src="{% static 'main/media/icons/pawprint.svg' %}" alt="">
                             <div>
@@ -43,16 +43,25 @@
                 </div>
                 <!--Categories-->
                 <div class="categories">
-                    <a href="http://127.0.0.1:8000/main/container/?for=для собак" class="dogs">Собаки</a>
-                    <a href="http://127.0.0.1:8000/main/container/?for=для котів" class="cats">Коти</a>
-                    <a href="http://127.0.0.1:8000/main/container/?for=для птахів" class="birds">Птахи</a>
-                    <a href="http://127.0.0.1:8000/main/container/?for=для гризунів" class="rodents">Гризуни</a>
-                    <a href="http://127.0.0.1:8000/main/container/?for=для риб" class="fish">Риби</a>
+                    <a href="{% url 'main:container' %}?for=для собак" class="dogs">Собаки</a>
+                    <a href="{% url 'main:container' %}?for=для котів" class="cats">Коти</a>
+                    <a href="{% url 'main:container' %}?for=для птахів" class="birds">Птахи</a>
+                    <a href="{% url 'main:container' %}?for=для гризунів" class="rodents">Гризуни</a>
+                    <a href="{% url 'main:container' %}?for=для риб" class="fish">Риби</a>
                 </div>
 
                 <div class="user-cart">
-                    <a href="http://127.0.0.1:8000/main/profile"><img src="{% static 'main/media/icons/user.svg' %}" alt="" class="user"></a>
-                    <a href="http://127.0.0.1:8000/main/cart"><img src="{% static 'main/media/icons/cart.svg' %}" alt="" class="cart"></a>
+                    <a href="
+                    {% if user.is_authenticated %}
+                        {% url 'main:profile' %}
+                    {% else %}
+                        {% url 'main:login' %}
+                    {% endif %}"><img src="{% static 'main/media/icons/user.svg' %}" alt="" class="user"></a>
+                    <a href="{% if user.is_authenticated %}
+                        {% url 'main:cart' %}
+                    {% else %}
+                        {% url 'main:login' %}
+                    {% endif %}"><img src="{% static 'main/media/icons/cart.svg' %}" alt="" class="cart"></a>
                 </div>
             </div>
 
@@ -63,11 +72,11 @@
             <div class="container">
                 <div class="Categories">
                     <h2>Категорії</h2>
-                    <p><a href="http://127.0.0.1:8000/main/container?for=для собак">Собаки</a></p>
-                    <p><a href="http://127.0.0.1:8000/main/container?for=для котів">Коти</a></p>
-                    <p><a href="http://127.0.0.1:8000/main/container?for=для птахів">Птахи</a></p>
-                    <p><a href="http://127.0.0.1:8000/main/container?for=для гризунів">Гризуни</a></p>
-                    <p><a href="http://127.0.0.1:8000/main/container?for=для риб">Риби</a></p>
+                    <p><a href="{% url 'main:container' %}?for=для собак">Собаки</a></p>
+                    <p><a href="{% url 'main:container' %}?for=для котів">Коти</a></p>
+                    <p><a href="{% url 'main:container' %}?for=для птахів">Птахи</a></p>
+                    <p><a href="{% url 'main:container' %}?for=для гризунів">Гризуни</a></p>
+                    <p><a href="{% url 'main:container' %}?for=для риб">Риби</a></p>
 
                 </div>
 

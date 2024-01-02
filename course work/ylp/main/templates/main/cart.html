@@ -9,9 +9,9 @@
                     {% else %}
                         {% for item in items %}
                             <div class="item">
-                            <a href="http://127.0.0.1:8000/main/info/?id={{ item.id }}">
+                            <a href="{% url 'main:info' %}?id={{ item.id }}">
                                 <img src="{{ item.photos.0.url }}" alt=""></a>
-                            <p><a href="http://127.0.0.1:8000/main/info/?id={{ item.id }}">{{ item.name }}</a></p>
+                            <p><a href="{% url 'main:info' %}?id={{ item.id }}">{{ item.name }}</a></p>
                             <div class="stars">
                                 <span>&starf;</span>
                                 <span>&starf;</span>
@@ -21,7 +21,7 @@
                             </div>
                             <div class="price-cart">
                                 <p>{{ item.price }}₴</p>
-                                <a href="http://127.0.0.1:8000/main/del_from_cart/?id={{ item.id }}">Видалити</a>
+                                <a href="{% url 'main:del_from_cart' %}?id={{ item.id }}">Видалити</a>
                             </div>
                             <span>Є в наявності</span>
 

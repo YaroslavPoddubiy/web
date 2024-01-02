@@ -58,7 +58,7 @@ def info(request: WSGIRequest):
     if request.method == "POST":
         user = models.MyUser.objects.get(user=User.objects.get(username=request.user.username))
         models.Feedback.objects.create(text=request.POST.get('feedback', 'Немає тексту'), date=date.today(),
-                                       user=user, item=models.Item.objects.get(id=id))
+                                       user=user, item=models.Item.objects.get(id=request.POST.get('id', 0)))
     view = request.GET.get('view', 'about')
     try:
         item = models.Item.objects.get(id=id)
@@ -66,11 +66,14 @@ def info(request: WSGIRequest):
         return HttpResponse('<p style="text-align: center; font-size: 32px">'
                             'Товару з таким id не існує</p>')
     photo_index = int(request.GET.get('photo', 0))
-    type = item.chars.get(key='Тип').value
     similar_items = []
-    for _item in models.Item.objects.all():
-        if type == _item.chars.get(key='Тип').value and id != _item.id:
-            similar_items.append(_item)
+    try:
+        type = item.chars.get(key='Тип').value
+        for _item in models.Item.objects.all():
+            if type == _item.chars.get(key='Тип').value and id != _item.id:
+                similar_items.append(_item)
+    except Exception:
+        pass
     try:
         user = models.MyUser.objects.get(user=User.objects.get(username=request.user.username))
     except Exception:
@@ -81,7 +84,7 @@ def info(request: WSGIRequest):
                    'user': user,
                    'view': view,
                    'feedbacks': models.Feedback.objects.all().filter(item=models.Item.objects.get(id=id)),
-                   'current_photo': list(item.photos)[photo_index]})
+                   'current_photo': list(item.photos)[photo_index] if item.photos else []})
 
 
 @csrf_exempt
@@ -89,11 +92,14 @@ def signup(request: WSGIRequest):
     if request.method == "GET":
         return render(request, 'main/signup.html')
     elif request.method == "POST":
-        user = User(username=request.POST['email'])
-        user.set_password(request.POST['password'])
-        user.save()
+        try:
+            user = User(username=request.POST['email'])
+            user.set_password(request.POST['password'])
+            user.save()
+        except Exception:
+            return HttpResponse("<p>Користувач з таким логіном вже існує</p>")
         models.MyUser.objects.create(user=user)
-    return redirect("http://127.0.0.1:8000/main/login")
+    return redirect("/login/")
 
 
 @csrf_exempt
@@ -110,12 +116,12 @@ def signin(request: WSGIRequest):
 
 def signout(request: WSGIRequest):
     logout(request)
-    return redirect("http://127.0.0.1:8000/main/landing")
+    return redirect("/main/landing")
 
 
 def profile(request: WSGIRequest):
     if not request.user.is_authenticated:
-        return redirect("http://127.0.0.1:8000/main/login")
+        return redirect("login/")
     user: models.MyUser = models.MyUser.objects.get(user=User.objects.get(username=request.user.username))
     if request.method == "GET":
         return render(request, 'main/profile.html', {'user': user})
@@ -141,14 +147,14 @@ def profile(request: WSGIRequest):
 
 def cart(request: WSGIRequest):
     if not request.user.is_authenticated:
-        return redirect("http://127.0.0.1:8000/main/login")
+        return redirect("/login")
     user = models.MyUser.objects.get(user=User.objects.get(username=request.user.username))
     return render(request, 'main/cart.html', {'items': user.cart})
 
 
 def add_to_cart(request: WSGIRequest):
     if not request.user.is_authenticated:
-        return redirect("http://127.0.0.1:8000/main/login")
+        return redirect("/login")
     id = int(request.GET.get('id', 1))
     url = request.GET.get('next', "/main/cart")
     user: models.MyUser = models.MyUser.objects.get(user=User.objects.get(username=request.user.username))
@@ -161,9 +167,9 @@ def del_from_cart(request: WSGIRequest):
     id = request.GET.get('id', 0)
     user: models.MyUser = models.MyUser.objects.get(user=User.objects.get(username=request.user.username))
     user.items.remove(models.Item.objects.get(id=int(id)))
-    return redirect("http://127.0.0.1:8000/main/cart")
+    return redirect("/main/cart")
 
 
 def del_feedback(request: WSGIRequest):
     models.Feedback.objects.get(id=request.GET.get('id', 100)).delete()
-    return redirect(request.GET.get('next'))
+    return redirect(request.GET.get('next', '/'))

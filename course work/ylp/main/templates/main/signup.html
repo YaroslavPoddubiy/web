@@ -23,6 +23,6 @@
             <input type="password" placeholder="Введіть пароль" name="password" id="password" required>
         </div>
         <button type="submit">Зареєструватися</button>
-        <p><a href="http://127.0.0.1:8000/main/login">Уже маєте акаунт?</a></p>
+        <p><a href="{% url 'main:login' %}">Уже маєте акаунт?</a></p>
     </form>
 </body>
